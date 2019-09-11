@@ -1,5 +1,9 @@
 package dao;
-
+/**
+ * 
+ * @author samyu
+ *
+ */
 public class EmailApi {
 	// RegistrationAction => RegisterDetailsConfirm
 	// RegistrationAction => ForgotPassword

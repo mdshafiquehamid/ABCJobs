@@ -23,6 +23,7 @@ import entity.ThreadReplyList;
 
 /**
  * Admin method
+ * @author Samyu
  */
 
 public class Admin {
