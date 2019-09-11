@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+"-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+"http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+	<package name="default" extends="struts-default">
+		<action name="registration" class="action.RegistrationAction">
+			<result name="HOME">/Pages/Home/home.jsp</result>
+			<result name="ERROR">/Pages/Registration/registrationHome.jsp</result>
+			<result name="LOGIN">/Pages/Home/home.jsp</result>
+			<result name="LOGOUT">/Pages/Registration/registrationHome.jsp</result>
+			<result name="REGISTER">/Pages/Registration/registrationDetails.jsp
+			</result>
+			<result name="REGISTER_DETAILS_BACK">/Pages/Registration/registrationHome.jsp</result>
+			<result name="REGISTER_DETAILS_CONFIRM">/Pages/Registration/registrationConfirmation.jsp
+			</result>
+			<result name="FORGOT">/Pages/Registration/registrationHome.jsp</result>
+			<result name="RESET">/Pages/Registration/registrationPassword.jsp
+			</result>
+			<result name="RESET_CONFIRM">/Pages/Registration/registrationHome.jsp</result>
+		</action>
+		<action name="profile" class="action.ProfileAction">
+			<result name="HOME">/Pages/Home/home.jsp</result>
+			<result name="ERROR">/Pages/Profile/profileEdit.jsp</result>
+			<result name="VIEW">/Pages/Profile/profileView.jsp</result>
+			<result name="EDIT">/Pages/Profile/profileEdit.jsp</result>
+			<result name="UPDATE">/Pages/Profile/profileView.jsp</result>
+			<result name="SEARCH">/Pages/Profile/profileSearch.jsp</result>
+			<result name="LIST">/Pages/Profile/profileBlock.jsp</result>
+			<result name="BLOCK">/Pages/Profile/profileBlock.jsp</result>
+		</action>
+		<action name="job" class="action.JobAction">
+			<result name="HOME">/Pages/Home/home.jsp</result>
+			<result name="ERROR">/Pages/Job/jobList.jsp</result>
+			<result name="LIST">/Pages/Job/jobList.jsp</result>
+			<result name="NEW">/Pages/Job/jobNew.jsp</result>
+			<result name="CREATE">/Pages/Job/jobNew.jsp</result>
+			<result name="VIEW">/Pages/Job/jobView.jsp</result>
+		</action>
+		<action name="message" class="action.MessageAction">
+			<result name="HOME">/Pages/Home/home.jsp</result>
+			<result name="ERROR">/Pages/Message/messageList.jsp</result>
+			<result name="LIST">/Pages/Message/messageList.jsp</result>
+			<result name="VIEW">/Pages/Message/messageView.jsp</result>
+		</action>
+		<action name="thread" class="action.ThreadAction">
+			<result name="HOME">/Pages/Home/home.jsp</result>
+			<result name="ERROR">/Pages/Thread/threadList.jsp</result>
+			<result name="LIST">/Pages/Thread/threadList.jsp</result>
+			<result name="VIEW">/Pages/Thread/threadView.jsp</result>
+		</action>
+	</package>
+</struts>  
