@@ -14,6 +14,7 @@ import entity.Profile;
  * 
  * @author samyu
  *
+ *
  */
 public class JobAction extends ActionSupport implements SessionAware {
 	private static final long serialVersionUID = 1L;
