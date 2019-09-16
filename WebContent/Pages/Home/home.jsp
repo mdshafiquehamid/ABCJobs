@@ -21,9 +21,10 @@
 	<br />
 	<br />
 	<br />
-	<h1>
+	<%--<h1>
 		<s:property value="userName" />
 	</h1>
+	  
 	<h2>
 		<s:if test="userAdmin">
 			User has admin rights
@@ -31,7 +32,7 @@
 		<s:if test="!userAdmin">
 			User does not have admin rights
 		</s:if>
-	</h2>
+	</h2>--%>
 	
 	<div class="jumbotron">
 		<div class="container">
@@ -85,8 +86,7 @@
 	<div class="row featurette">
 		<div class="col-md-7 order-md-2">
 			<h2 class="featurette-heading">
-				Message & Thread. <span class="text-muted">Connect with
-					People.</span>
+				Message & Thread. <span class="text-muted">Get connected.</span>
 			</h2>
 			<p class="lead">Message someone you know or someone whom you
 				would like to get to know. Join threads and contribute back to the

@@ -1,14 +1,11 @@
-/**
- * Entity Java Bean Class 
- * 
- * @author samyutha
- *
- */
-
 package entity;
 
 /**
- * Entity method 
+ * 
+ * @author Samyutha
+ * @version 1.0
+ * @description Entity Java Bean Class including all the getters and setters
+ * 
  */
 
 public class Entity {

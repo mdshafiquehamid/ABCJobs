@@ -1,14 +1,11 @@
-/**
- * Profile Java Bean Class 
- * 
- * @author samyutha
- *
- */
-
 package entity;
 
 /**
- * Profile method: Used for search profile
+ * 
+ * @author Samyutha
+ * @version 1.0
+ * @description Profile Java Bean Class including all the getters and setters
+ * 
  */
 
 public class Profile {
@@ -127,10 +124,18 @@ public class Profile {
 	public void setCompanyName(String companyName) {
 		this.companyName = companyName;
 	}
+	
+	/**
+	 * Get Blocked
+	 */
 
 	public boolean isBlocked() {
 		return blocked;
 	}
+	
+	/**
+	 * Set Blocked
+	 */
 
 	public void setBlocked(boolean blocked) {
 		this.blocked = blocked;

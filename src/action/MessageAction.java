@@ -10,11 +10,15 @@ import com.opensymphony.xwork2.ActionSupport;
 
 import dao.Admin;
 import entity.MessageList;
+
 /**
  * 
- * @author samyu
- *
+ * @author Samyutha
+ * @version 1.0
+ * @description MessageAction class for all the message functionalities: send, view and reply back to messages
+ * 
  */
+
 public class MessageAction extends ActionSupport implements SessionAware {
 	private static final long serialVersionUID = 1L;
 	private static final String HOME = "HOME";

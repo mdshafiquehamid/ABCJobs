@@ -5,17 +5,29 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Login and Register</title>
-<link
-	href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css"
-	rel="stylesheet" id="bootstrap-css">
-<script
-	src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
-<script
-	src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<link rel="stylesheet" href="style.css">
+<title>Registration Home</title>
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<link rel="stylesheet" href="Pages/Registration/registrationHomeStyle.css">
+
+<style>
+img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+h1 {
+  text-align: center;
+  font-family: "Arial Black", Gadget, sans-serif;
+}
+</style>
+
 </head>
-<body background="Images/Background2.jpg">
+<body background="Images/Background.jpg">
+
+    <img src="Images/Logo.png" alt="Logo" style="width:128px;height:128px;">
 
 	<h1>Welcome to ABC Jobs Community Portal</h1>
 

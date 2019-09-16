@@ -5,7 +5,7 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Profile Block/Unblock</title>
+<title>Profile Block</title>
 </head>
 <body>
 	<%@ include file="../Home/header.jsp"%>
@@ -14,14 +14,14 @@
 	<br />
 	
 		<div class="container">
-  <h2>Profile - Block/Unblock</h2>          
+  <h2>Block Users</h2>          
   <table class="table table-bordered">
     <thead>
       <tr>
         <th>First Name</th>
 		<th>Last Name</th>
 		<th>Email</th>
-		<th>Block/Unblock</th>			
+		<th>Block</th>			
       </tr>
     </thead>
 	<tbody>

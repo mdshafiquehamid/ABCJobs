@@ -1,14 +1,11 @@
-/**
- * Job Java Bean Class 
- * 
- * @author samyutha
- *
- */
-
 package entity;
 
 /**
- * Job method extending Entity Java bean
+ * 
+ * @author Samyutha
+ * @version 1.0
+ * @description Job Java Bean Class including all the getters and setters
+ * 
  */
 
 public class Job extends Entity{

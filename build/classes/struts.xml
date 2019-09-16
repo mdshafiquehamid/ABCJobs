@@ -49,5 +49,11 @@
 			<result name="LIST">/Pages/Thread/threadList.jsp</result>
 			<result name="VIEW">/Pages/Thread/threadView.jsp</result>
 		</action>
+		<action name="email" class="action.EmailAction">
+			<result name="HOME">/Pages/Home/home.jsp</result>
+			<result name="ERROR">/Pages/Email/emailSend.jsp</result>
+			<result name="SEND">/Pages/Email/emailSend.jsp</result>
+			<result name="BULK">/Pages/Email/emailSend.jsp</result>
+		</action>
 	</package>
 </struts>  

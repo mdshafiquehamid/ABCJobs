@@ -1,14 +1,11 @@
-/**
- * User Experience Java Bean Class 
- * 
- * @author samyutha
- *
- */
-
 package entity;
 
 /**
- * User Experience method extending Entity Java bean
+ * 
+ * @author Samyutha
+ * @version 1.0
+ * @description User Experience Java Bean Class including all the getters and setters
+ * 
  */
 
 public class UserExperience extends Entity {

@@ -5,21 +5,13 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Search Profile</title>
-<link
-	href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css"
-	rel="stylesheet" id="bootstrap-css">
-<script
-	src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
-<script
-	src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-
-<link rel="stylesheet"
-	href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
-<link rel="stylesheet"
-	href="https://use.fontawesome.com/releases/v5.7.2/css/all.css">
-
-<link rel="stylesheet" href="searchProfileStyle.css">
+<title>Profile Search</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 </head>
 <body>
 	<%@ include file="../Home/header.jsp"%>
@@ -27,8 +19,10 @@
 	<br />
 	<br />
 
-	<div>
-		<table border="1">
+	<div class="container">
+    <h2>Search Results</h2>          
+    	<table class="table table-bordered">
+    	  <thead>
 			<tr>
 				<th>First Name</th>
 				<th>Last Name</th>
@@ -37,6 +31,8 @@
 				<th>Country</th>
 				<th>Message</th>
 			</tr>
+		   </thead>
+		   <tbody>
 			<s:iterator value="users">
 				<tr>
 					<td><s:property value="firstName" /></td>
@@ -45,16 +41,21 @@
 					<td><s:property value="city" /></td>
 					<td><s:property value="country" /></td>
 					<td>
+					<div class="form-group row">
+					<div class="col-sm-4">
 						<form action="message" method="post">
 							<input type="hidden" name="otherUserId"
 								value="<s:property value="userID" />" /> <input type="hidden"
 								name="otherUserName"
 								value="<s:property value="firstName" /> <s:property value="lastName" />" />
-							<button name="submit" value="View">Message</button>
+							<button name="submit" value="View" class="btn btn-primary">Message</button>
 						</form>
+						</div>
+						</div>
 					</td>
 				</tr>
 			</s:iterator>
+			</tbody>
 		</table>
 	</div>
 	<p>

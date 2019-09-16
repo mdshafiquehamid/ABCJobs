@@ -11,12 +11,15 @@ import com.opensymphony.xwork2.ActionSupport;
 
 import dao.Admin;
 import entity.Profile;
+
 /**
  * 
- * @author samyu
+ * @author Samyutha
+ * @version 1.0
+ * @description ProfileAction class for all the profile functionalities: view, edit and search profile
  * 
- *
  */
+
 public class ProfileAction extends ActionSupport implements SessionAware {
 	private static final long serialVersionUID = 1L;
 	private static final String HOME = "HOME";

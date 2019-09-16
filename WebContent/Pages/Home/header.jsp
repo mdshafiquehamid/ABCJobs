@@ -6,10 +6,14 @@
 <head>
 <meta charset="ISO-8859-1">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script
+	src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+<script
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 </head>
 <title>Header</title>
 </head>
@@ -29,71 +33,75 @@
 				<li class="nav-item active">
 					<form action="profile" method="post">
 						<button style="background: none; border: none;" class="nav-link"
-							    name="submit" value="Home">Home</button>
+							name="submit" value="Home">Home</button>
 					</form>
 				</li>
-				
+
 				<li class="nav-item active">
 					<form action="profile" method="post">
 						<button style="background: none; border: none;" class="nav-link"
-							    name="submit" value="View">Profile</button>
+							name="submit" value="View">Profile</button>
 					</form>
 				</li>
-				
+
 				<li class="nav-item active">
 					<form action="job" method="post">
 						<button style="background: none; border: none;" class="nav-link"
-							    name="submit" value="New">Post Job</button>
+							name="submit" value="New">Post Job</button>
 					</form>
 				</li>
-				
+
 				<li class="nav-item active">
 					<form action="job" method="post">
 						<button style="background: none; border: none;" class="nav-link"
-							    name="submit" value="List">Jobs</button>
+							name="submit" value="List">Job</button>
 					</form>
 				</li>
-				
+
 				<li class="nav-item active">
 					<form action="message" method="post">
 						<button style="background: none; border: none;" class="nav-link"
-							    name="submit" value="List">Messages</button>
+							name="submit" value="List">Message</button>
 					</form>
 				</li>
-				
+
 				<li class="nav-item active">
 					<form action="thread" method="post">
 						<button style="background: none; border: none;" class="nav-link"
-							    name="submit" value="List">Threads</button>
+							name="submit" value="List">Thread</button>
 					</form>
 				</li>
-				
-				<li class="nav-item active">
-					<form action="profile" method="post">
-						<button style="background: none; border: none;" class="nav-link"
-							    name="submit" value="List">Users</button>
-					</form>
-				</li>
-				
-				<li class="nav-item active">
-					<form action="email" method="post">
-						<button style="background: none; border: none;" class="nav-link"
-							    name="submit" value="List">Emails</button>
-					</form>
-				</li>
-				
+
+				<s:if test="userAdmin">
+					<li class="nav-item active">
+						<form action="profile" method="post">
+							<button style="background: none; border: none;" class="nav-link"
+								name="submit" value="List">Users</button>
+						</form>
+					</li>
+
+					<li class="nav-item active">
+						<form action="email" method="post">
+							<button style="background: none; border: none;" class="nav-link"
+								name="submit" value="Send">Email</button>
+						</form>
+					</li>
+				</s:if>
+
 				<li class="nav-item active">
 					<form action="registration" method="post">
 						<button style="background: none; border: none;" class="nav-link"
-							    name="submit" value="Logout">Logout</button>
+							name="submit" value="Logout">Logout</button>
 					</form>
 				</li>
 			</ul>
 
 			<form class="form-inline my-2 my-md-0" action="profile" method="post">
 				<input class="form-control mr-sm-2" type="text" placeholder="Search"
-					aria-label="Search" name="search" value="<s:property value="search" />">
-				<button class="btn btn-outline-success my-2 my-sm-0" name="submit" value="Search">Search</button>
+					aria-label="Search" name="search"
+					value="<s:property value="search" />">
+				<button class="btn btn-outline-success my-2 my-sm-0" name="submit"
+					value="Search">Search</button>
 			</form>
 		</div>
 	</nav>

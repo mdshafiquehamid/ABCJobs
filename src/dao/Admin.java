@@ -1,10 +1,3 @@
-/**
- * Admin Java class: connects to the database to store and retrieve information for all pages. 
- * 
- * @author samyutha
- *
- */
-
 package dao;
 
 import java.sql.Connection;
@@ -22,8 +15,11 @@ import entity.ThreadList;
 import entity.ThreadReplyList;
 
 /**
- * Admin method
- * @author Samyu
+ * 
+ * @author Samyutha
+ * @version 1.0
+ * @description Admin class connects to the database to store and retrieve information for all pages in the portal
+ * 
  */
 
 public class Admin {
@@ -390,6 +386,10 @@ public class Admin {
 			}
 		}
 	}
+	
+	/**
+	 * Get Messages
+	 */
 
 	public List<MessageList> getUserMessages(int userId) throws SQLException, Exception {
 		List<MessageList> messages = new ArrayList<MessageList>();
@@ -427,6 +427,10 @@ public class Admin {
 		}
 		return messages;
 	}
+	
+	/**
+	 * Get Messages from Other Users
+	 */
 
 	public List<MessageList> getUserMessages(int userId, int otherUserId) throws SQLException, Exception {
 		List<MessageList> messages = new ArrayList<MessageList>();
@@ -468,6 +472,10 @@ public class Admin {
 		}
 		return messages;
 	}
+	
+	/**
+	 * Send Messages
+	 */
 
 	public boolean sendMessage(int senderUserID, int recipientUserID, String subject, String message)
 			throws SQLException, Exception {
@@ -491,6 +499,10 @@ public class Admin {
 			}
 		}
 	}
+	
+	/**
+	 * Thread List
+	 */
 
 	public List<ThreadList> getAllThreads(int userId) throws SQLException, Exception {
 		List<ThreadList> threads = new ArrayList<ThreadList>();
@@ -524,6 +536,10 @@ public class Admin {
 		}
 		return threads;
 	}
+	
+	/**
+	 * Thread Reply
+	 */
 
 	public List<ThreadReplyList> getThreadReplies(int threadId, int userId) throws SQLException, Exception {
 		List<ThreadReplyList> replies = new ArrayList<ThreadReplyList>();
@@ -580,6 +596,10 @@ public class Admin {
 			}
 		}
 	}
+	
+	/**
+	 * Create New Thread
+	 */
 
 	public boolean createNewThread(int userID, String subject, String message) throws SQLException, Exception {
 		try {
@@ -601,6 +621,10 @@ public class Admin {
 			}
 		}
 	}
+	
+	/**
+	 * Create New Job
+	 */
 
 	public boolean createNewJob(int userId, String title, String companyName, String salary, String description)
 			throws SQLException, Exception {
@@ -625,6 +649,10 @@ public class Admin {
 			}
 		}
 	}
+	
+	/**
+	 * Get Job Application
+	 */
 
 	public List<Profile> getJobApplication(int jobId) throws SQLException, Exception {
 		List<Profile> users = new ArrayList<Profile>();
@@ -653,6 +681,10 @@ public class Admin {
 		}
 		return users;
 	}
+	
+	/**
+	 * Get All Users to Block/Unblock
+	 */
 
 	public List<Profile> getAllUsers(int userId) throws SQLException, Exception {
 		List<Profile> users = new ArrayList<Profile>();
@@ -681,6 +713,10 @@ public class Admin {
 		}
 		return users;
 	}
+	
+	/**
+	 * Updating of Blocked Users
+	 */
 
 	public boolean updateUserBlock(int userId, boolean isBlocked) throws SQLException, Exception {
 		try {
@@ -694,6 +730,31 @@ public class Admin {
 			// }
 			ps.setBoolean(1, isBlocked);
 			ps.setInt(2, userId);
+			int rs = ps.executeUpdate();
+			return rs > 0;
+		} catch (Exception e) {
+			e.printStackTrace();
+			getConnection().rollback();
+			return false;
+		} finally {
+			if (getConnection() != null) {
+				getConnection().close();
+			}
+		}
+	}
+	
+	/**
+	 * Send Bulk Email
+	 */
+
+	public boolean sendBulkEmail(String addresses, String subject, String message) throws SQLException, Exception {
+		try {
+			String sql = "INSERT INTO emails (Email, EmailSubject, EmailMessage, Timestamp) "
+					+ "VALUES (?, ?, ?, NOW());";
+			PreparedStatement ps = getConnection().prepareStatement(sql);
+			ps.setString(1, addresses);
+			ps.setString(2, subject);
+			ps.setString(3, message);
 			int rs = ps.executeUpdate();
 			return rs > 0;
 		} catch (Exception e) {

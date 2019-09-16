@@ -1,14 +1,11 @@
-/**
- * Users Java Bean Class 
- * 
- * @author samyutha
- *
- */
-
 package entity;
 
 /**
- * Users method extending Entity Java bean
+ * 
+ * @author Samyutha
+ * @version 1.0
+ * @description Users Java Bean Class including all the getters and setters
+ * 
  */
 
 public class Users extends Entity{

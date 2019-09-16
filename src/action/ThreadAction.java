@@ -12,6 +12,14 @@ import dao.Admin;
 import entity.ThreadList;
 import entity.ThreadReplyList;
 
+/**
+ * 
+ * @author Samyutha
+ * @version 1.0
+ * @description ThreadAction class for all thread functionalities: post, view and reply to thread
+ * 
+ */
+
 public class ThreadAction extends ActionSupport implements SessionAware {
 	private static final long serialVersionUID = 1L;
 	private static final String HOME = "HOME";

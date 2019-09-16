@@ -1,14 +1,11 @@
-/**
- * Thread Java Bean Class 
- * 
- * @author samyutha
- *
- */
-
 package entity;
 
 /**
- * Thread method extending Entity Java bean
+ * 
+ * @author Samyutha
+ * @version 1.0
+ * @description Thread Java Bean Class including all the getters and setters
+ * 
  */
 
 public class Thread extends Entity{

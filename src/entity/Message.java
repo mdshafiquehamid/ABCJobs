@@ -1,14 +1,11 @@
-/**
- * Message Java Bean Class 
- * 
- * @author samyutha
- *
- */
-
 package entity;
 
 /**
- * Message method extending Entity Java bean
+ * 
+ * @author Samyutha
+ * @version 1.0
+ * @description Message Java Bean Class including all the getters and setters
+ * 
  */
 
 public class Message extends Entity{

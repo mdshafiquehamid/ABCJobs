@@ -5,7 +5,7 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>List Threads</title>
+<title>Thread List</title>
 </head>
 <body>
 	<%@ include file="../Home/header.jsp"%>
@@ -66,15 +66,19 @@
 	</div>
 
 	<hr />
-	<div>
-		<table border="1">
-			<tr>
+	<div class="container">
+  		<h2>Threads</h2>          
+  		<table class="table table-bordered">
+    	<thead>
+      		<tr>
 				<th>Thread Subject</th>
 				<th>Thread Message</th>
 				<th>Created By</th>
 				<th>Created On</th>
 				<th>View</th>
 			</tr>
+		</thead>
+		<tbody>
 			<s:iterator value="threads">
 				<tr
 					style="
@@ -97,11 +101,12 @@
 								name="threadCreatorName" value="<s:property value="userName" />" />
 							<input type="hidden" name="threadCreatedOn"
 								value="<s:property value="timestamp" />" />
-							<button name="submit" value="View">View</button>
+							<button name="submit" value="View" class="btn btn-primary">View</button>
 						</form>
 					</td>
 				</tr>
 			</s:iterator>
+			</tbody>
 		</table>
 	</div>
 	<div style="<s:property value="pageMessageStyle" />">

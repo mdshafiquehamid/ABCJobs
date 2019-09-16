@@ -10,11 +10,15 @@ import com.opensymphony.xwork2.ActionSupport;
 import dao.Admin;
 import entity.JobListing;
 import entity.Profile;
+
 /**
  * 
- * @author samyu
- *
+ * @author Samyutha
+ * @version 1.0
+ * @description JobAction class which includes all the job functionalities: post, view and apply to job
+ * 
  */
+
 public class JobAction extends ActionSupport implements SessionAware {
 	private static final long serialVersionUID = 1L;
 	private static final String HOME = "HOME";

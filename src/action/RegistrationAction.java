@@ -1,14 +1,27 @@
 package action;
 
 import java.sql.ResultSet;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Map;
+
+import javax.mail.MessagingException;
 
 import org.apache.struts2.interceptor.SessionAware;
 
 import com.opensymphony.xwork2.ActionSupport;
 
 import dao.Admin;
-import dao.EmailApi;
+
+import email.MailSender;
+
+/**
+ * 
+ * @author Samyutha
+ * @version 1.0
+ * @description RegistrationAction class for registration, login and reset password functionalities
+ * 
+ */
 
 public class RegistrationAction extends ActionSupport implements SessionAware {
 	private static final long serialVersionUID = 1L;
@@ -37,11 +50,6 @@ public class RegistrationAction extends ActionSupport implements SessionAware {
 
 	@Override
 	public String execute() throws Exception {
-		// TODO: MUST REMOVE THIS LINES BEFORE SUBMISSION
-		loginEmail = "htonnae@miibeian.gov.cn"; // 15
-		loginPassword = "bgV4QEXdUDI";
-		loginEmail = "kshickle9@cnbc.com"; // 10
-		loginPassword = "YzPI4Ug";
 		switch (submit) {
 		case Home:
 			return HOME;
@@ -107,7 +115,7 @@ public class RegistrationAction extends ActionSupport implements SessionAware {
 			return REGISTER;
 
 		case RegisterDetailsBack:
-			registerStyle = "color:blue";
+			registerStyle = "color:white";
 			registerMessage = "Please edit your details";
 			return REGISTER_DETAILS_BACK;
 
@@ -120,7 +128,16 @@ public class RegistrationAction extends ActionSupport implements SessionAware {
 						registerPassword);
 				rs = userRoleId;
 				if (rs > 0) {
-					if (!EmailApi.sendEmail(true)) {
+					MailSender mailSender = new MailSender();
+					try {
+						List<String> recipients = new ArrayList<String>();
+						recipients.add(registerEmail);
+						String message = "Thank you " + registerFirstName + " " + registerLastName
+								+ " for registering with ABC Jobs.";
+						String subject = "Registration Confirmation with ABC Jobs";
+						mailSender.sendSSLMessage(recipients, message, subject);
+					} catch (MessagingException e) {
+						e.printStackTrace();
 						registerMessage = "Registration was successful but could not send email to " + registerEmail;
 						return ERROR;
 					}
@@ -138,11 +155,21 @@ public class RegistrationAction extends ActionSupport implements SessionAware {
 				forgotMessage = "Email cannot be blank";
 				return ERROR;
 			}
-			if (EmailApi.sendEmail(true)) {
+			MailSender mailSender = new MailSender();
+			try {
+				List<String> recipients = new ArrayList<String>();
+				recipients.add(forgotEmail);
+				String message = "http://localhost:8080/ABCJobs/registration?submit=ResetPassword&resetEmail="
+						+ forgotEmail;
+				message.replaceAll("@", "%40");
+				String subject = "Reset Password for ABC Jobs";
+				mailSender.sendSSLMessage(recipients, message, subject);
 				forgotStyle = "color:green";
 				forgotMessage = "Email has been sent to " + forgotEmail;
-			} else
+			} catch (MessagingException e) {
+				e.printStackTrace();
 				forgotMessage = "Could not send email to " + forgotEmail;
+			}
 			return FORGOT;
 
 		case ResetPassword:

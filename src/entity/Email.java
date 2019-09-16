@@ -1,72 +1,18 @@
-/**
- * Email Java Bean Class 
- * 
- * @author samyutha
- *
- */
-
 package entity;
 
 /**
- * Email method extending Entity Java bean
+ * 
+ * @author Samyutha
+ * @version 1.0
+ * @description Email Java Bean Class including all the getters and setters
+ * 
  */
 
-public class Email extends Entity{
-	
-	 private String subject;
-	 private String message;
-	 private String timestamp;
+public class Email {
 	 
 	 private int emailID;
+	 private String email; 
 	 
-	 /**
-	  * Get Subject
-	  */
-
-	    public String getSubject() {
-	        return subject;
-	    }
-	    
-	    /**
-		  * Set Subject
-		  */
-
-	    public void setSubject(String subject) {
-	        this.subject = subject;
-	    }
-	    
-	    /**
-		  * Get Message
-		  */
-
-	    public String getMessage() {
-	        return message;
-	    }
-	    
-	    /**
-		  * Set Message
-		  */
-
-	    public void setMessage(String message) {
-	        this.message = message;
-	    }
-	    
-	    /**
-		  * Get Timestamp
-		  */
-	    
-	    public String getTimestamp() {
-	        return timestamp;
-	    }
-	    
-	    /**
-		  * Set Timestamp
-		  */
-
-	    public void setTimestamp(String timestamp) {
-	        this.timestamp = timestamp;
-	    }
-	    
 	    /**
 		  * Get Email ID
 		  */
@@ -82,4 +28,21 @@ public class Email extends Entity{
 	    public void setEmailID(int emailID) {
 	        this.emailID = emailID;
 	    }
+	    
+	    /**
+		  * Get Email
+		  */
+
+		public String getEmail() {
+			return email;
+		}
+		
+		/**
+		  * Set Email 
+		  */
+
+		public void setEmail(String email) {
+			this.email = email;
+		}
+	        
 }
