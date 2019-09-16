@@ -21,7 +21,7 @@ import javax.mail.internet.MimeMessage;
  * 
  * @author Samyutha
  * @version 1.0
- * @description MailSender class contains functionality to send bulk email
+ * @description MailSender class contains functionality to send bulk email. Using Struts_BulkEmail API. 
  * 
  */
 
